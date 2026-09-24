@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,92 +22,100 @@
       background:var(--bg);
       color:var(--accent);
       -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
     }
 
-    /* HEADER */
     header{
-      background:#0b0b0b;
+      background:#000;
       color:#fff;
       text-align:center;
       padding:48px 20px;
     }
-    header h1{margin:0;font-size:44px;letter-spacing:0.4px}
-    header p{margin:10px 0 0;font-size:16px;color:#e6edf3}
+    header h1{ margin:0; font-size:48px; letter-spacing:0.5px; }
+    header p{ margin:14px 0 0; font-size:20px; opacity:0.95; }
 
-    main{max-width:1100px;margin:40px auto;padding:0 20px;}
+    .container{
+      max-width:1100px;
+      margin:40px auto;
+      padding:0 20px;
+    }
 
-    /* ABOUT */
-    .about{padding:20px 0 40px}
-    .about p{font-size:18px;color:var(--muted);margin:0 0 18px;line-height:1.6}
+    h2.section-title{
+      font-size:40px;
+      margin:30px 0 20px;
+    }
 
-    /* PROJECTS grid */
-    h2{font-size:32px;margin:18px 0}
-    .projects{
+    .about {
+      background: linear-gradient(#fff, #fff);
+      padding:36px;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(10,10,10,0.03);
+      margin-bottom:30px;
+    }
+    .about p{ font-size:20px; margin:0; color:var(--muted) }
+
+    /* Projects grid */
+    .projects {
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap:28px;
       align-items:start;
     }
 
-    .card{
+    .project {
       background:var(--card);
       border-radius:var(--radius);
-      box-shadow:0 8px 22px rgba(10,10,10,0.06);
-      overflow:hidden;
+      padding:18px;
+      box-shadow:0 10px 30px rgba(10,10,10,0.06);
       display:flex;
       flex-direction:column;
-      min-height:380px;
+      min-height:340px;
     }
 
-    .thumb{
-      height:240px;
+    .project img{
       width:100%;
-      overflow:hidden;
+      height:180px;
+      object-fit:cover;
+      border-radius:10px;
+      display:block;
+      margin-bottom:14px;
       background:#eee;
     }
-    .thumb img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
 
-    .body{
-      padding:20px;
-      flex:1;
+    .project h3{ margin:6px 0 8px; font-size:22px; }
+    .project p{ margin:0 0 16px; color:var(--muted); flex:1; }
+
+    /* button row */
+    .project .actions{
       display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+      gap:12px;
+      align-items:center;
     }
-    .body h3{margin:0 0 8px;font-size:20px}
-    .body p{margin:0 0 16px;color:var(--muted);line-height:1.5}
-
-    .actions{display:flex;gap:12px;align-items:center}
-    .view-btn{
+    .btn{
       display:inline-block;
-      text-decoration:none;
       background:var(--btn);
       color:#fff;
-      padding:11px 16px;
+      padding:12px 18px;
+      text-decoration:none;
       border-radius:10px;
       font-weight:600;
-      box-shadow:0 6px 12px rgba(0,0,0,0.12);
+      box-shadow:0 6px 18px rgba(17,24,39,0.18);
+      transition:transform .12s ease, box-shadow .12s ease;
     }
-    .view-btn:active{transform:translateY(1px)}
-    .ghost{
-      background:transparent;
+    .btn:hover{ transform:translateY(-3px); box-shadow:0 14px 30px rgba(17,24,39,0.2); }
+
+    .muted-link{
       color:var(--muted);
-      padding:10px 14px;
-      border-radius:10px;
-      border:1px solid #eee;
+      font-size:14px;
       text-decoration:none;
+      padding:8px 12px;
+      border-radius:8px;
     }
 
-    footer{padding:28px 0;text-align:center;color:var(--muted);margin-top:36px}
-
-    @media (max-width:920px){
-      .projects{grid-template-columns:1fr}
-      header h1{font-size:36px}
+    @media (max-width:600px){
+      header h1{ font-size:32px }
+      .about p{ font-size:16px }
     }
   </style>
 </head>
@@ -117,61 +126,53 @@
     <p>UI/UX Designer (Fresher) — Bangalore | kempileprasad@gmail.com</p>
   </header>
 
-  <main>
-    <section class="about">
-      <p>I design simple, user-centered web & mobile interfaces. I focus on clarity, usability and thoughtful UI to solve real user problems. Tools: Figma, prototyping, wireframes.</p>
+  <main class="container">
+
+    <section class="about" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="section-title">About Me</h2>
+      <p>I am a UI/UX designer focused on creating simple, user-friendly and visually appealing digital experiences. I design wireframes, prototypes and pixel-perfect UI for web and mobile.</p>
     </section>
 
-    <section>
-      <h2>Selected Projects</h2>
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="section-title">Projects</h2>
 
       <div class="projects">
 
         <!-- Project 1 -->
-        <article class="card">
-          <div class="thumb">
-            <!-- file name (must exist in repo root): event.png -->
-            <img src="event.png" alt="Event Hall Booking design">
-          </div>
-          <div class="body">
-            <div>
-              <h3>Event Hall Booking Design</h3>
-              <p>Mobile UI/UX for browsing, selecting and booking event halls with a simple booking flow and clear venue details.</p>
-            </div>
-            <div class="actions">
-              <!-- REPLACE HREF with your real project link (Figma or live demo) -->
-              <a class="view-btn" href="https://your-event-link.example" target="_blank" rel="noopener noreferrer">View Project</a>
-              <a class="ghost" href="#event-details">Details</a>
-            </div>
+        <article class="project">
+          <!-- image file must be in repo root: event.png -->
+          <img src="event.png" alt="Event Hall Booking design screenshot" />
+          <h3>Event Hall Booking Design</h3>
+          <p>UI design for booking function halls with search, filters and booking flow. Clean layout and clear CTAs.</p>
+
+          <div class="actions">
+            <!-- change href to the project link if you have a live demo page or external URL -->
+            <a class="btn" href="event.png" target="_blank" rel="noopener">View Project</a>
+            <!-- optional small link (example: details or pdf) -->
+            <a class="muted-link" href="event.png" target="_blank" rel="noopener">Open image</a>
           </div>
         </article>
 
         <!-- Project 2 -->
-        <article class="card">
-          <div class="thumb">
-            <!-- file name (must exist in repo root): juice.png -->
-            <img src="juice.png" alt="Fruit Juice App design">
-          </div>
-          <div class="body">
-            <div>
-              <h3>Fruit Juice App</h3>
-              <p>Clean and colorful UI for ordering fruit juices online — product browsing, quick add-to-cart and smooth checkout flow.</p>
-            </div>
-            <div class="actions">
-              <!-- REPLACE HREF with your real project link (Figma or live demo) -->
-              <a class="view-btn" href="https://your-juice-link.example" target="_blank" rel="noopener noreferrer">View Project</a>
-              <a class="ghost" href="#juice-details">Details</a>
-            </div>
+        <article class="project">
+          <!-- image file must be in repo root: juice.png -->
+          <img src="juice.png" alt="Fruit Juice App design screenshot" />
+          <h3>Fruit Juice App</h3>
+          <p>Modern UI for ordering fruit juices with clean, colorful cards and quick checkout flow.</p>
+
+          <div class="actions">
+            <!-- If you want to open a project page instead, replace the href with the page URL (example: "fruit/index.html" or "https://your-site/project1") -->
+            <a class="btn" href="juice.png" target="_blank" rel="noopener">View Project</a>
+            <a class="muted-link" href="juice.png" target="_blank" rel="noopener">Open image</a>
           </div>
         </article>
 
       </div>
     </section>
 
-    <footer>
-      <p>© 2026 Kempile Prasad</p>
-    </footer>
   </main>
 
 </body>
-</html>
+</html>  
+      
+  
