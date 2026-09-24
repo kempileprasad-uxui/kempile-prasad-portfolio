@@ -8,37 +8,39 @@
   <style>
     :root{
       --bg:#f5f5f5;
-      --card:#fff;
-      --accent:#000;
-      --muted:#666;
+      --card:#ffffff;
+      --accent:#0b0b0b;
+      --muted:#6b7280;
+      --btn:#111827;
       --radius:14px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       background:var(--bg);
       color:var(--accent);
       -webkit-font-smoothing:antialiased;
     }
 
+    /* HEADER */
     header{
       background:#0b0b0b;
       color:#fff;
       text-align:center;
       padding:48px 20px;
     }
-    header h1{margin:0;font-size:48px;letter-spacing:0.5px}
-    header p{margin:8px 0 0;font-size:18px;color:#eee}
+    header h1{margin:0;font-size:44px;letter-spacing:0.4px}
+    header p{margin:10px 0 0;font-size:16px;color:#e6edf3}
 
-    main{max-width:1100px;margin:48px auto;padding:0 20px;}
+    main{max-width:1100px;margin:40px auto;padding:0 20px;}
 
-    /* About */
-    .about{background:transparent;padding:24px 0 40px}
-    .about p{font-size:20px;color:var(--muted);margin:0 0 32px}
+    /* ABOUT */
+    .about{padding:20px 0 40px}
+    .about p{font-size:18px;color:var(--muted);margin:0 0 18px;line-height:1.6}
 
-    /* Projects grid */
-    h2{font-size:36px;margin:24px 0}
+    /* PROJECTS grid */
+    h2{font-size:32px;margin:18px 0}
     .projects{
       display:grid;
       grid-template-columns:repeat(2,1fr);
@@ -49,58 +51,60 @@
     .card{
       background:var(--card);
       border-radius:var(--radius);
-      box-shadow:0 6px 18px rgba(10,10,10,0.08);
+      box-shadow:0 8px 22px rgba(10,10,10,0.06);
       overflow:hidden;
       display:flex;
       flex-direction:column;
       min-height:380px;
     }
 
-    .card .thumb{
-      height:220px;
+    .thumb{
+      height:240px;
       width:100%;
       overflow:hidden;
       background:#eee;
     }
-    .card .thumb img{
+    .thumb img{
       width:100%;
       height:100%;
       object-fit:cover;
       display:block;
     }
 
-    .card .body{
-      padding:22px;
+    .body{
+      padding:20px;
       flex:1;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
     }
-    .card h3{margin:0 0 10px;font-size:24px}
-    .card p{margin:0 0 18px;color:var(--muted);line-height:1.5}
+    .body h3{margin:0 0 8px;font-size:20px}
+    .body p{margin:0 0 16px;color:var(--muted);line-height:1.5}
 
-    .actions{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-
+    .actions{display:flex;gap:12px;align-items:center}
     .view-btn{
       display:inline-block;
       text-decoration:none;
-      background:#000;
+      background:var(--btn);
       color:#fff;
-      padding:12px 18px;
+      padding:11px 16px;
       border-radius:10px;
       font-weight:600;
       box-shadow:0 6px 12px rgba(0,0,0,0.12);
     }
-
     .view-btn:active{transform:translateY(1px)}
-    .ghost{background:transparent;color:var(--muted);padding:10px 14px;border-radius:10px;border:1px solid #eee}
+    .ghost{
+      background:transparent;
+      color:var(--muted);
+      padding:10px 14px;
+      border-radius:10px;
+      border:1px solid #eee;
+      text-decoration:none;
+    }
 
-    footer{padding:28px 0;text-align:center;color:var(--muted)}
-    @media (max-width:880px){
+    footer{padding:28px 0;text-align:center;color:var(--muted);margin-top:36px}
+
+    @media (max-width:920px){
       .projects{grid-template-columns:1fr}
       header h1{font-size:36px}
     }
@@ -115,29 +119,29 @@
 
   <main>
     <section class="about">
-      <p>I am a UI/UX designer focused on creating simple, user-friendly and visually appealing digital experiences.</p>
+      <p>I design simple, user-centered web & mobile interfaces. I focus on clarity, usability and thoughtful UI to solve real user problems. Tools: Figma, prototyping, wireframes.</p>
     </section>
 
     <section>
-      <h2>Projects</h2>
+      <h2>Selected Projects</h2>
 
       <div class="projects">
 
         <!-- Project 1 -->
         <article class="card">
           <div class="thumb">
-            <!-- file name: event.png (already uploaded) -->
-            <img src="event.png" alt="Event Hall Booking Design">
+            <!-- file name (must exist in repo root): event.png -->
+            <img src="event.png" alt="Event Hall Booking design">
           </div>
           <div class="body">
             <div>
               <h3>Event Hall Booking Design</h3>
-              <p>UI design for booking function halls with search, filters and a clean booking flow.</p>
+              <p>Mobile UI/UX for browsing, selecting and booking event halls with a simple booking flow and clear venue details.</p>
             </div>
             <div class="actions">
-              <!-- Replace href with your real project link -->
-              <a class="view-btn" href="https://example.com/event-hall" target="_blank" rel="noopener">View Project</a>
-              <a class="ghost" href="#details">Details</a>
+              <!-- REPLACE HREF with your real project link (Figma or live demo) -->
+              <a class="view-btn" href="https://your-event-link.example" target="_blank" rel="noopener noreferrer">View Project</a>
+              <a class="ghost" href="#event-details">Details</a>
             </div>
           </div>
         </article>
@@ -145,18 +149,18 @@
         <!-- Project 2 -->
         <article class="card">
           <div class="thumb">
-            <!-- file name: juice.png (already uploaded) -->
-            <img src="juice.png" alt="Fruit Juice App">
+            <!-- file name (must exist in repo root): juice.png -->
+            <img src="juice.png" alt="Fruit Juice App design">
           </div>
           <div class="body">
             <div>
               <h3>Fruit Juice App</h3>
-              <p>Modern UI for ordering fruit juices with clean, colorful product pages and checkout flow.</p>
+              <p>Clean and colorful UI for ordering fruit juices online — product browsing, quick add-to-cart and smooth checkout flow.</p>
             </div>
             <div class="actions">
-              <!-- Replace href with your real project link -->
-              <a class="view-btn" href="https://example.com/fruit-juice" target="_blank" rel="noopener">View Project</a>
-              <a class="ghost" href="#details2">Details</a>
+              <!-- REPLACE HREF with your real project link (Figma or live demo) -->
+              <a class="view-btn" href="https://your-juice-link.example" target="_blank" rel="noopener noreferrer">View Project</a>
+              <a class="ghost" href="#juice-details">Details</a>
             </div>
           </div>
         </article>
